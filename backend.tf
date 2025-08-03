@@ -4,5 +4,6 @@ terraform {
     key    = "state"
     region = "ap-south-1"
     dynamodb_table = "backend"
+    encrypt = true
   }
 }
