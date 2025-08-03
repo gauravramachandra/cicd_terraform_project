@@ -29,7 +29,7 @@ plan:
     dependencies:
         - validate
     script:
-        - terraform plan -out="planfile"
+        - terraform plan -out="planfile" -lock=false
     artifacts:
         paths:
           - planfile
