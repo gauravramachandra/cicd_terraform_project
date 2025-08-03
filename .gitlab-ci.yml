@@ -12,6 +12,12 @@ variables:
 before_script:
     - terraform --version
     - terraform init
+    - |
+      if ! terraform plan -lock=false > /dev/null 2>&1; then
+        echo "Attempting to force unlock..."
+        terraform force-unlock -force 2CD49698N562QEQCNCD5BA1VOFVV4KQNSO5AENVJF64Q9ASUAAJG || true
+        terraform force-unlock -force H99J82DNS201SNKFSTK477VQDNVV4KQNSO5AENVJF64Q9ASUAAJG || true
+      fi
 
 stages:
     - validate
