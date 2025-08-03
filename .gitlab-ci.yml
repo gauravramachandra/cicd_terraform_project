@@ -45,5 +45,5 @@ apply:
 destroy:
     stage: destroy
     script:
-        - terraform destroy -auto-approve
+        - terraform destroy -auto-approve -lock=false
     when: manual
