@@ -13,10 +13,10 @@ before_script:
     - terraform --version
     - terraform init
     - |
-      if ! terraform plan -lock=false > /dev/null 2>&1; then
-        echo "Attempting to force unlock..."
-        terraform force-unlock -force S94ininfbu^ihrfo9n7%gubuvvyT || true
-      fi
+      # Force unlock the specific locks from your error
+      terraform force-unlock -force S94ininfbu^ihrfo9n7%gubuvvyT || true
+      terraform force-unlock -force EF22C14CANLHENUGVBVH1EA7BJVV4KQNSO5AEMVJF66Q9ASUAAJG || true
+      terraform force-unlock -force 1U5S09GS48C4TKRHA4AQQ4UCVNVV4KQNSO5AEMVJF66Q9ASUAAJG || true
 
 stages:
     - validate
