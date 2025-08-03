@@ -39,7 +39,7 @@ apply:
     dependencies:
         - plan
     script:
-        - terraform apply -input=false "planfile" -lock=false
+        - terraform apply -input=false -lock=false "planfile"
     when: manual
 
 destroy:
